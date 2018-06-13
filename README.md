@@ -108,9 +108,7 @@ Also for Fragments you can register bus in `onCreateView` and unregister it in `
 <b>WARNING: It's obvious that if you forget to unregister Event Bus properly memory leaks might occur</b>
 
 # Screenshots
-![Screenshot 1](https://raw.githubusercontent.com/amin-amini/Simple-Event-Bus/master/images/img1.jpg)
-
-![Screenshot 2](https://raw.githubusercontent.com/amin-amini/Simple-Event-Bus/master/images/img2.jpg)
+![Screenshot 1](https://raw.githubusercontent.com/amin-amini/Simple-Event-Bus/master/images/img.jpg)
 
 
 
