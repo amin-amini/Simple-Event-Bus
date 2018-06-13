@@ -34,7 +34,8 @@ public interface EventBusSchema {
 
 ```
 
-# <b><span style="color:blue">NOTE: after creation or any change to your schema you have to rebuild your project so SimpleEventBus can generate required classes</span></b>
+# <b>NOTE: after creation or any changes to your schema you have to rebuild your project so SimpleEventBus can generate required classes</b>
+
 
 # Register/Unregister
 You can register/unregister Event Bus in every single Activity but I personally prefer a BaseActivity to do this:
@@ -110,5 +111,10 @@ Also for Fragments you can register bus in `onCreateView` and unregister it in `
 ![Screenshot 1](https://raw.githubusercontent.com/amin-amini/Simple-Event-Bus/master/images/img1.jpg)
 
 ![Screenshot 2](https://raw.githubusercontent.com/amin-amini/Simple-Event-Bus/master/images/img2.jpg)
+
+
+
+# <b>NOTE: Once again I'm going to tell you that after any changes to your schema you have to rebuild your project so SimpleEventBus can generate required classes</b>
+
 
 
