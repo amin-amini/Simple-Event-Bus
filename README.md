@@ -1,6 +1,6 @@
 # Simple Event Bus for Android
 
-Simple Event Bus is An Android library to easily create and use an Event Bus .
+Simple Event Bus is An Android library base on RxAndroid to easily create and use an Event Bus.
 It allows you to create different methods with different arguments and easily broadcast events and receive them. Using this library you don't need to include a switch case to detect which event have been raised and also you don't need to cast objects. On the other side because you are only registering one object for all events (instead of `n` same objects for different events) this library consumes RAM as low as possible. What you have to do is to create an interface and register/unregister your receiver and of course implement your callbacks.
 
 # Installation
