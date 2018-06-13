@@ -1,0 +1,15 @@
+apply plugin: 'java-library'
+apply plugin: 'maven'
+group = 'com.github.amin-amini'
+
+dependencies {
+    implementation 'com.github.amin-amini:Android-Utils:+'
+    compile 'io.reactivex.rxjava2:rxjava:+'
+    compile 'io.reactivex.rxjava2:rxandroid:+'
+
+    compile 'com.google.guava:guava:+'
+    compile 'com.squareup:javapoet:+'
+}
+
+sourceCompatibility = "1.8"
+targetCompatibility = "1.8"
