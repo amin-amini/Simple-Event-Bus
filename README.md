@@ -1,4 +1,4 @@
-## Simple Event Bus for Android ##
+# Simple Event Bus for Android
 
 Simple Event Bus is An Android library to easily create and use an Event Bus .
 It allows you to create different methods with different arguments and easily broadcast events and receive them. Using this library you don't need to include a switch case to detect which event have been raised and also you don't need to cast objects. On the other side because you are only registering one object for all events (instead of `n` same objects for different events) this library consumes RAM as low as possible. What you have to do is to create an interface and register/unregister your receiver and of course implement your callbacks.
@@ -33,6 +33,8 @@ public interface EventBusSchema {
 }
 
 ```
+
+# <b><span style="color:blue">NOTE: after creation or any change to your schema you have to rebuild your project so SimpleEventBus can generate required classes</span></b>
 
 # Register/Unregister
 You can register/unregister Event Bus in every single Activity but I personally prefer a BaseActivity to do this:
@@ -103,5 +105,10 @@ EventBus.getInstance().broadcastTextChanged(this, charSequence.toString());
 Also for Fragments you can register bus in `onCreateView` and unregister it in `onDestroyView` and for Views you can register bus in `onAttachedToWindow` and unregister it in `onDetachedFromWindow`
 
 <b>WARNING: It's obvious that if you forget to unregister Event Bus properly memory leaks might occur</b>
+
+# Screenshots
+![Screenshot 1](https://raw.githubusercontent.com/amin-amini/Simple-Event-Bus/master/images/img1.jpg)
+
+![Screenshot 2](https://raw.githubusercontent.com/amin-amini/Simple-Event-Bus/master/images/img2.jpg)
 
 
