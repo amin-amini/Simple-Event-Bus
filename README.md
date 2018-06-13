@@ -17,8 +17,8 @@ It allows you to create different methods with different arguments and easily br
 * Add the dependency in your app build.gradle
 	```gradle
   dependencies {
-      implementation 'com.github.amin-amini:Simple-Event-Bus:1.0.0'
-      annotationProcessor 'com.github.amin-amini:Simple-Event-Bus:1.0.0'
+      implementation 'com.github.amin-amini:Simple-Event-Bus:1.0.1'
+      annotationProcessor 'com.github.amin-amini:Simple-Event-Bus:1.0.1'
   }
 	```
 
