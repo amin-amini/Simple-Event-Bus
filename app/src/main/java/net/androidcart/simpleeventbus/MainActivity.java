@@ -24,7 +24,7 @@ public class MainActivity extends BaseActivity {
 
             @Override
             public void onTextChanged(EditText e, String text) {
-                showToast("Change Text : " + text);
+                showToast("Text Changed : " + text);
             }
 
             void showToast(CharSequence str){

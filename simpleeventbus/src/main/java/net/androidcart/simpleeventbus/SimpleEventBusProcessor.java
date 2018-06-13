@@ -179,6 +179,16 @@ public class SimpleEventBusProcessor extends AbstractProcessor {
                     continue;
                 }
                 String keyName = key.getSimpleName().toString();
+
+                messager.printMessage(Diagnostic.Kind.NOTE, "SimpleEventBus:" + keyName);
+                if ( keyName.length()>1 ) {
+                    messager.printMessage(Diagnostic.Kind.NOTE, "SimpleEventBus:" + keyName.substring(0, 1).toUpperCase());
+                    keyName = keyName.substring(0, 1).toUpperCase() + keyName.substring(1);
+                } else {
+                    keyName = keyName.toUpperCase();
+                }
+                messager.printMessage(Diagnostic.Kind.NOTE, "SimpleEventBus:" + keyName);
+
                 ExecutableElement eMethod = (ExecutableElement) key;
 
                 List<String> paramsNames = new ArrayList<>();
