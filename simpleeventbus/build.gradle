@@ -9,6 +9,8 @@ dependencies {
 
     compile 'com.google.guava:guava:+'
     compile 'com.squareup:javapoet:+'
+
+    implementation project(':SimpleEventBusSchema')
 }
 
 sourceCompatibility = "1.8"

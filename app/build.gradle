@@ -29,6 +29,7 @@ dependencies {
 
 
     implementation 'com.github.amin-amini:Android-Utils:0.0.3'
-    compile project(':simpleeventbus')
+
+    implementation project(':SimpleEventBusSchema')
     annotationProcessor project(':simpleeventbus')
 }

@@ -1,1 +1,1 @@
-include ':app', ':simpleeventbus'
+include ':app', ':simpleeventbus', ':SimpleEventBusSchema'

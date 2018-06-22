@@ -1,4 +1,4 @@
-package net.androidcart.simpleeventbus;
+package net.androidcart.simpleeventbusschema;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -8,5 +8,5 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.SOURCE)
 @Target(ElementType.TYPE)
 public @interface SimpleEventBusSchema {
-        String value();
+    String value();
 }

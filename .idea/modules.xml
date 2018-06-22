@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/SimpleEventBus.iml" filepath="$PROJECT_DIR$/SimpleEventBus.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SimpleEventBusSchema/SimpleEventBusSchema.iml" filepath="$PROJECT_DIR$/SimpleEventBusSchema/SimpleEventBusSchema.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/simpleeventbus/simpleeventbus.iml" filepath="$PROJECT_DIR$/simpleeventbus/simpleeventbus.iml" />
     </modules>
