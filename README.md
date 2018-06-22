@@ -1,26 +1,27 @@
-# Simple Event Bus for Android
+
+# Simple Event Bus for Android Based on RxJava and RxAndroid
 
 Simple Event Bus is An Android library base on RxAndroid to easily create and use an Event Bus.
-It allows you to create different methods with different arguments and easily broadcast events and receive them. Using this library you don't need to include a switch case to detect which event have been raised and also you don't need to cast objects. On the other side because you are only registering one object for all events (instead of `n` same objects for different events) this library consumes RAM as low as possible. What you have to do is to create an interface and register/unregister your receiver and of course implement your callbacks.
+It allows you to create different methods with different arguments and easily broadcast events and receive them. Using this library you don't need to include a switch case to detect which event have been raised and also you don't need to cast objects. On the other side because you are only registering one object for all events (instead of `n` same objects for different events) this library consumes RAM as low as possible. What you have to do is to create an interface and register/unregister your receivers and of course implement your callbacks.
 
 # Installation
 * Add jitpack.io to your root gradle file (project level) :
-	```gradle
+   ```gradle
   allprojects {
-  		repositories {
-  			...
-  			maven { url 'https://jitpack.io' }
-  		}
-  	}
-	```
+      repositories {
+         ...
+         maven { url 'https://jitpack.io' }
+      }
+   }
+   ```
 
 * Add the dependency in your app build.gradle
-	```gradle
+   ```gradle
   dependencies {
-      implementation 'com.github.amin-amini:Simple-Event-Bus:1.0.1'
-      annotationProcessor 'com.github.amin-amini:Simple-Event-Bus:1.0.1'
+      implementation 'com.github.amin-amini.Simple-Event-Bus:SimpleEventBusSchema:1.0.2'
+      annotationProcessor 'com.github.amin-amini.Simple-Event-Bus:simpleeventbus:1.0.2'
   }
-	```
+   ```
 
 # Create Event Bus
 Create an interface to describe your events and annotate your desired event bus name e.g. `EventBus`:
@@ -42,7 +43,7 @@ You can register/unregister Event Bus in every single Activity but I personally 
 
 * **BaseActivity.java**
 
-	```java
+   ```java
     abstract public class BaseActivity extends AppCompatActivity {
 
         public EventBus bus = EventBus.getInstance();
@@ -61,18 +62,18 @@ You can register/unregister Event Bus in every single Activity but I personally 
             super.onDestroy();
             bus.unregister(busMapper);
         }
-        
+
         abstract protected EventBusCallbackMethods getEventBusCallback();
     }
-	```
+   ```
 # Handle Receiving Events
 
 * **MainActivity.java**
 
-	```java
+   ```java
     public class MainActivity extends Base Activity {
         ...
-	
+
         @Override
         protected EventBusCallbackMethods getEventBusCallback() {
             return new EventBusCallbackMethods(){
@@ -88,7 +89,7 @@ You can register/unregister Event Bus in every single Activity but I personally 
             };
         }
     }
-	```
+   ```
 
 # Broadcast
 you can easily broadcast your event e.g. in Button onClickListener:
@@ -113,6 +114,3 @@ Also for Fragments you can register bus in `onCreateView` and unregister it in `
 
 
 # <b>NOTE: Once again I'm going to tell you that after any changes to your schema you have to rebuild your project so SimpleEventBus can generate required classes</b>
-
-
-
