@@ -68,10 +68,10 @@ public class SimpleEventBusProcessor extends AbstractProcessor {
             String busClassName = annot.value();
 
 
-            TypeName eventBusTN = ClassName.get(packageName, busClassName).withoutAnnotations();
+            TypeName eventBusTN = ClassName.get(packageName, busClassName);
 
-            TypeName objectTN = TypeName.get(SimpleEventBusObject.class).withoutAnnotations();
-            ClassName consumerTN = ClassName.get(Consumer.class).withoutAnnotations();
+            TypeName objectTN = TypeName.get(SimpleEventBusObject.class);
+            ClassName consumerTN = ClassName.get(Consumer.class);
 
             ClassName rxBusCN = ClassName.get("net.androidcart.androidutils.eventbus", "RxBus");
             TypeName rxBusTN = ParameterizedTypeName.get(rxBusCN, objectTN);
@@ -129,12 +129,11 @@ public class SimpleEventBusProcessor extends AbstractProcessor {
                     .enumBuilder( mapperEnum )
                     .addModifiers(Modifier.PUBLIC);
             ClassName mapperEnumMethod = ClassName.get(packageName, mapperEnum);
-            TypeName mapperEnumMethodType = mapperEnumMethod.withoutAnnotations();
 
 
             MethodSpec doBroadcast = MethodSpec
                     .methodBuilder("doBroadcast")
-                    .addParameter(mapperEnumMethodType, "key")
+                    .addParameter(mapperEnumMethod, "key")
                     .addParameter(Object.class, "obj")
                     .addStatement("bus.publish(new SimpleEventBusObject(key, obj))")
                     .addModifiers(Modifier.PUBLIC).build();
@@ -142,12 +141,11 @@ public class SimpleEventBusProcessor extends AbstractProcessor {
 
             String CallbackMapperName = busClassName + "CallbackMapper";
             ClassName CallbackMethodsMethod = ClassName.get(packageName, CallbackMethodsName);
-            TypeName CallbackMethodsMethodType = CallbackMethodsMethod.withoutAnnotations();
 
             TypeSpec.Builder Mapper = TypeSpec
                     .classBuilder(CallbackMapperName )
                     .addModifiers(Modifier.PUBLIC)
-                    .addField(FieldSpec.builder(CallbackMethodsMethodType, "methods").addModifiers(Modifier.PRIVATE).build());
+                    .addField(FieldSpec.builder(CallbackMethodsMethod, "methods").addModifiers(Modifier.PRIVATE).build());
 
             Mapper.addSuperinterface( new TypeToken<Consumer<SimpleEventBusObject>>(){}.getType() );
 
@@ -155,7 +153,7 @@ public class SimpleEventBusProcessor extends AbstractProcessor {
             MethodSpec mapperConstructor = MethodSpec
                     .constructorBuilder()
                     .addModifiers(Modifier.PUBLIC)
-                    .addParameter(CallbackMethodsMethodType, "methods")
+                    .addParameter(CallbackMethodsMethod, "methods")
                     .addStatement("this.methods = methods")
                     .build();
             Mapper.addMethod(mapperConstructor);
@@ -218,7 +216,7 @@ public class SimpleEventBusProcessor extends AbstractProcessor {
                     eventBusMethodBuilder.addStatement("object["+i+"] = " + paramsNames.get(i));
                 }
                 eventBusMethodBuilder.addStatement(String.format("doBroadcast(%s.%s, object)",
-                    mapperEnumMethodType.withoutAnnotations().toString(),
+                        mapperEnumMethod.toString(),
                     keyName
                 ));
 

@@ -3,7 +3,7 @@ apply plugin: 'maven'
 group = 'com.github.amin-amini'
 
 dependencies {
-    implementation 'com.github.amin-amini:Android-Utils:+'
+    implementation 'com.github.amin-amini:Android-Utils:0.0.3'
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 }
 
